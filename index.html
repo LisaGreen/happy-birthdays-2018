@@ -1,10 +1,150 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+
+    <style>
+
+      body {
+        background: url(https://media.giphy.com/media/12zxWWVMXNDOy4/giphy.gif);
+        text-align: center;
+        font-family: 'Slabo 27px', serif;
+        color: #444;
+        margin: 0px;
+      }
+
+      #cheers {
+        height: 50px;
+      }
+
+      #beerdrip img, #petris img, #dinos img {
+        height: 70px;
+      }
+
+      #party-title {
+        font-size: 50px;
+        width: 460px;
+      }
+
+      h1 {
+        margin: 0px;
+        padding: 225px;
+        font-size: 80px;
+        color: palegreen;
+        background: url(http://www.myspacehippo.com/files/glitterbacks/bg345.gif);
+      }
+
+      div {
+        background: white;
+        padding: 40px;
+        font-size: 20px;
+        max-width: 800px;
+        margin: 100px auto;
+        line-height: 2;
+        border: 6px double;
+      }
+
+      #intro1 div {
+        font-size: 40px;
+        background: white;
+        margin-top: 40px;
+      }
+
+      #intro1, #intro2 {
+        width: 400px;
+      }
+
+      #deets {
+        width: 175px;
+        font-weight: bold;
+        margin: 40px auto;
+        background: aliceblue;
+      }
+
+      #closer {
+        background-image: url(https://media.giphy.com/media/l1J9EQhfkb8tPu836/giphy.gif);
+        font-size: 80px;
+        padding: 200px 60px;
+        background-repeat: no-repeat;
+        background-color: white;
+        background-size: cover;
+        margin: 100px auto;
+      }
+
+      #fine-print {
+        padding: 40px 0px;
+        max-width: 100%;
+        margin: 50px auto;
+        max-width: 40%;
+        background: white;
+      }
+
+    </style>
   </head>
   <body>
-    <h1>
-      Happy Birthdays 2018
-    </h1>
+    <marquee behavior="alternate" style="position: fixed; left: 0px;">
+        <img id="cheers" src="https://media.giphy.com/media/3ov9jLEBP6ZTzhDC6Y/giphy.gif">
+    </marquee>
+  <h1>
+    Niole and Lisa’s Birthdays Party!!!
+  </h1>
+
+  <div id="intro1">
+    We both have March birthdays so we are having a combined party! No doubt you are super excited about this news and already counting the days until the party- but wait, it gets even better.  The theme of the party is: 
+  </div>
+
+  <div id="party-title">
+    <img id="cheers" src="https://linsedition.files.wordpress.com/2016/04/beer-gif1.gif?w=432" />
+    <strong>
+      Beers You Should
+    </strong>
+    <img id="cheers" src="https://cdn.dribbble.com/users/278870/screenshots/1573076/preloader_gif.gif" />
+    <strong>
+      Know
+    </strong>
+    <img id="cheers" src="https://media.giphy.com/media/3ov9jLEBP6ZTzhDC6Y/giphy.gif" />
+  </div>
+
+  <span id="dinos">
+  </span>
+
+  <div id="intro2">
+    That’s right, it is a party for our birthdays but we are giving you a gift* - the gift of knowledge. Knowledge that can only be gained by a night of sampling many many delicious beers.  There will be so many beers that in order to keep them all cold we will be filling up a bathtub with ice. There will also be awesome people and some snacks and two very adorable dogs. 
+  </div>
+
+  <span id="beerdrip">
+  </span>
+
+  <div id="deets">
+    Thursday March 15th
+    7:30pm - midnight
+    3033 Market Street
+  </div>
+
+  <div id="closer">
+    Hope you can join us!!
+  </div>
+
+  <span id="petris">
+  </span>
+
+  <div id="fine-print">
+    *Of course this does not preclude you bringing one or both of us a gift :) Neither of us have registered anywhere, all gifts from birthday cards to paying our rent for this month works for us. Just know however, that the number of beers allotted will be proportionate to the number of gifts you bring (:
+  </div>
+
+  <script>
+    function addGif(id, src, total) {
+      Array(total).fill(0).forEach(function() {
+        var img = document.createElement("img");
+        img.setAttribute("src", src);
+        document.getElementById(id).append(img);
+      });
+    }
+
+    addGif("dinos", "https://media.giphy.com/media/B5TlTe1mbnEZy/giphy.gif", 10);
+    addGif("petris", "https://media.giphy.com/media/AJ6HwgXsd5gbK/giphy.gif", 10);
+    addGif("beerdrip", "https://media.giphy.com/media/7AHYVGAO2kWsg/giphy.gif", 10);
+  </script>
+
   </body>
 </html>
