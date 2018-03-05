@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="35264036835-bahmf6h8jd8lgs3ghq2msasvtst0q1ao.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
     <title>Happy Birthdays 2018</title>
 
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
@@ -139,7 +143,24 @@
     <span class="emphasis">*</span>Of course this does not preclude you bringing one or both of us a gift :) Neither of us have registered anywhere, all gifts from birthday cards to paying our rent for this month works for us. Just know however, that the number of beers allotted will be proportionate to the number of gifts you bring (:
   </div>
 
+  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+
   <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      };
+
     function addGif(id, src, total) {
       Array(total).fill(0).forEach(function() {
         var img = document.createElement("img");
