@@ -11,6 +11,10 @@ const credentials = {key: privateKey, cert: certificate};
 
 const app = express();
 
+const httpsServer = https.createServer(credentials, app);
+
+httpsServer.listen(8443);
+
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(bodyParser.json())
@@ -29,5 +33,3 @@ app.post('/rsvp/remove', function(req, res) {
   res.send("remove " + name + email + profId);
 });
 
-const httpsServer = https.createServer(credentials, app);
-httpsServer.listen(3000);
